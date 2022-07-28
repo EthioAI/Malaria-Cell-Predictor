@@ -45,11 +45,9 @@ def dataset_loader():
     return X, y
     
 
-def cross_val_score(clf, X, y, n, n_jobs=1):
+def cross_val_score(clf, X, y, n):
     skfolds = StratifiedKFold(n_splits=n, shuffle=True, random_state=42)
-
-    # create a list variable using multiprocessing PROCESS_MANAGER
-    scores = PROCESS_MANAGER.list()
+    scores = []
 
     for train_index, test_index in skfolds.split(X, y):
         clone_clf = clone(clf)
