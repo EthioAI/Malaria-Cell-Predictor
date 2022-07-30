@@ -1,0 +1,12 @@
+/__pycache__
+/data
+/models
+
+.amlignore
+.amlignore.amltmp
+.gitignore.amltmp
+/.ipynb_aml_checkpoints
+
+attrs.py.amltmp
+main.ipynb.amltmp
+readme.md.amltmp
