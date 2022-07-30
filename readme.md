@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/69455299/181875921-018fe698-cea0-407f-b442-b4c7d9bbb8ec.jpg" width="1000" >
+</p>
 # Malaria Cell Predictor
 This model predicts malaria from a cell. It is trained using the gradient boosting algorithm from xgboost library. The model is light weight and very fast relatively to other models I tried.<br/>
 
