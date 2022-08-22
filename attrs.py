@@ -1,3 +1,4 @@
+import enum
 import os
 import numpy as np
 import matplotlib as mpl
@@ -7,7 +8,7 @@ import cv2
 from skimage import color
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import StratifiedKFold
-from sklearn.base import clone
+from sklearn.base import BaseEstimator, TransformerMixin, clone
 import multiprocessing
 
 
@@ -26,23 +27,38 @@ def dataset_loader():
     for i in os.listdir("data/cell_images/Parasitized"):
         if ".png" in i:
             path = "data/cell_images/Parasitized/"+i 
-            img = cv2.resize(plt.imread(path), (25,25))
-            img = color.rgb2gray(img).ravel()
+            img = cv2.resize(plt.imread(path), (50,50))
+            # img = img.reshape(-1, 3)
             X.append(img)
-            y.append(1)
+            y.append(1.)
 
     for i in os.listdir("data/cell_images/Uninfected/"):
         if ".png" in i:
             path = "data/cell_images/Uninfected/"+i
-            img = cv2.resize(plt.imread(path), (25,25))
-            img = color.rgb2gray(img).ravel()
+            img = cv2.resize(plt.imread(path), (50,50))
+            # img = img.reshape(-1, 3)
             X.append(img)
-            y.append(0)
+            y.append(0.)
 
     X = np.array(X) 
     y = np.array(y)
 
     return X, y
+
+
+class ArrayRavel(BaseEstimator, TransformerMixin):
+    '''
+    It changes the arrays in the dataframe to be 1D arrays.
+    '''
+    def __init__(self):
+        pass
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X:np.ndarray):
+        X_raveled = np.array([x.ravel() for x in X])
+        return X_raveled
     
 
 def cross_val_score(clf, X, y, n):
