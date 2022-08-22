@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dataset: https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria
 
 
@@ -7,3 +8,6 @@ Scores:  [0.82115086 0.81415241 0.82270607 0.81881804 0.81726283 0.82892691
  0.83203733 0.8281493  0.84059098]
 Mean:  0.8260238465526178
 Standard deviation:  0.007412261089358269
+=======
+dataset: https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria
+>>>>>>> 53d1c7ad4d536ba8a8b9005fda0fbb2e2be07d0f
