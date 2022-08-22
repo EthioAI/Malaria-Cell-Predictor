@@ -1,16 +1,4 @@
 /__pycache__
 /data
 /models
-<<<<<<< HEAD
 /logs
-=======
-
-.amlignore
-.amlignore.amltmp
-.gitignore.amltmp
-/.ipynb_aml_checkpoints
-
-attrs.py.amltmp
-main.ipynb.amltmp
-readme.md.amltmp
->>>>>>> 53d1c7ad4d536ba8a8b9005fda0fbb2e2be07d0f

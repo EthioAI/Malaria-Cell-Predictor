@@ -33,7 +33,7 @@ def dataset_loader():
             img = cv2.resize(plt.imread(path), (25,25))
             img = color.rgb2gray(img).ravel()
             X.append(img)
-            y.append(1)
+            y.append(1.)
 
 
     for i in os.listdir("data/cell_images/Uninfected/"):
@@ -47,7 +47,7 @@ def dataset_loader():
             img = cv2.resize(plt.imread(path), (25,25))
             img = color.rgb2gray(img).ravel()
             X.append(img)
-            y.append(0)
+            y.append(0.)
 
     X = np.array(X) 
     y = np.array(y)
@@ -105,3 +105,4 @@ def display_cross_val_score(scores, write_log=False, write_path="cross_val_score
         with open(write_path, "w+") as f:
             f.write(output)
             f.close()
+
