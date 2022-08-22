@@ -24,30 +24,16 @@ def dataset_loader():
     for i in os.listdir("data/cell_images/Parasitized"):
         if ".png" in i:
             path = "data/cell_images/Parasitized/"+i 
-
             img = cv2.resize(plt.imread(path), (50,50))
-            # img = img.reshape(-1, 3)
             X.append(img)
-            y.append(1.)
-
-            img = cv2.resize(plt.imread(path), (25,25))
-            img = color.rgb2gray(img).ravel()
-            X.append(img)
-            y.append(1.)
-
+            y.append(1)
 
     for i in os.listdir("data/cell_images/Uninfected/"):
         if ".png" in i:
-
+            path = "data/cell_images/Uninfected/"+i 
             img = cv2.resize(plt.imread(path), (50,50))
-            # img = img.reshape(-1, 3)
             X.append(img)
-            y.append(0.)
-
-            img = cv2.resize(plt.imread(path), (25,25))
-            img = color.rgb2gray(img).ravel()
-            X.append(img)
-            y.append(0.)
+            y.append(0)
 
     X = np.array(X) 
     y = np.array(y)
